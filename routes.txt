@@ -1,4 +1,13 @@
                                Prefix Verb   URI Pattern                                                                              Controller#Action
+                                 root GET    /                                                                                        articles#index
+                     article_comments GET    /articles/:article_id/comments(.:format)                                                 comments#index
+                                      POST   /articles/:article_id/comments(.:format)                                                 comments#create
+                  new_article_comment GET    /articles/:article_id/comments/new(.:format)                                             comments#new
+                 edit_article_comment GET    /articles/:article_id/comments/:id/edit(.:format)                                        comments#edit
+                      article_comment GET    /articles/:article_id/comments/:id(.:format)                                             comments#show
+                                      PATCH  /articles/:article_id/comments/:id(.:format)                                             comments#update
+                                      PUT    /articles/:article_id/comments/:id(.:format)                                             comments#update
+                                      DELETE /articles/:article_id/comments/:id(.:format)                                             comments#destroy
                              articles GET    /articles(.:format)                                                                      articles#index
                                       POST   /articles(.:format)                                                                      articles#create
                           new_article GET    /articles/new(.:format)                                                                  articles#new
@@ -7,6 +16,38 @@
                                       PATCH  /articles/:id(.:format)                                                                  articles#update
                                       PUT    /articles/:id(.:format)                                                                  articles#update
                                       DELETE /articles/:id(.:format)                                                                  articles#destroy
+                    new_article_index GET    /new_article(.:format)                                                                   new_article#index
+                                      POST   /new_article(.:format)                                                                   new_article#create
+                      new_new_article GET    /new_article/new(.:format)                                                               new_article#new
+                     edit_new_article GET    /new_article/:id/edit(.:format)                                                          new_article#edit
+                                      GET    /new_article/:id(.:format)                                                               new_article#show
+                                      PATCH  /new_article/:id(.:format)                                                               new_article#update
+                                      PUT    /new_article/:id(.:format)                                                               new_article#update
+                                      DELETE /new_article/:id(.:format)                                                               new_article#destroy
+                   edit_article_index GET    /edit_article(.:format)                                                                  edit_article#index
+                                      POST   /edit_article(.:format)                                                                  edit_article#create
+                     new_edit_article GET    /edit_article/new(.:format)                                                              edit_article#new
+                    edit_edit_article GET    /edit_article/:id/edit(.:format)                                                         edit_article#edit
+                                      GET    /edit_article/:id(.:format)                                                              edit_article#show
+                                      PATCH  /edit_article/:id(.:format)                                                              edit_article#update
+                                      PUT    /edit_article/:id(.:format)                                                              edit_article#update
+                                      DELETE /edit_article/:id(.:format)                                                              edit_article#destroy
+                                 tags GET    /tags(.:format)                                                                          tags#index
+                                      POST   /tags(.:format)                                                                          tags#create
+                              new_tag GET    /tags/new(.:format)                                                                      tags#new
+                             edit_tag GET    /tags/:id/edit(.:format)                                                                 tags#edit
+                                  tag GET    /tags/:id(.:format)                                                                      tags#show
+                                      PATCH  /tags/:id(.:format)                                                                      tags#update
+                                      PUT    /tags/:id(.:format)                                                                      tags#update
+                                      DELETE /tags/:id(.:format)                                                                      tags#destroy
+                            tag_index GET    /tag(.:format)                                                                           tag#index
+                                      POST   /tag(.:format)                                                                           tag#create
+                                      GET    /tag/new(.:format)                                                                       tag#new
+                                      GET    /tag/:id/edit(.:format)                                                                  tag#edit
+                                      GET    /tag/:id(.:format)                                                                       tag#show
+                                      PATCH  /tag/:id(.:format)                                                                       tag#update
+                                      PUT    /tag/:id(.:format)                                                                       tag#update
+                                      DELETE /tag/:id(.:format)                                                                       tag#destroy
         rails_postmark_inbound_emails POST   /rails/action_mailbox/postmark/inbound_emails(.:format)                                  action_mailbox/ingresses/postmark/inbound_emails#create
            rails_relay_inbound_emails POST   /rails/action_mailbox/relay/inbound_emails(.:format)                                     action_mailbox/ingresses/relay/inbound_emails#create
         rails_sendgrid_inbound_emails POST   /rails/action_mailbox/sendgrid/inbound_emails(.:format)                                  action_mailbox/ingresses/sendgrid/inbound_emails#create

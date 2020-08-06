@@ -1,0 +1,14 @@
+<h1>All Tags</h1>
+
+  <% if @tag.empty? %>
+    <p>No articles have tags.</p>
+  <% else %>
+  <ul>
+    <% @tag.each do |t| %>
+      <li>
+        <ul><%= t.name %> <%= link_to "Delete #{t.name}", tag_path(t.id), method: :delete, data: {confirm: "Are you sure?"} %></ul>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+<p><%= link_to "Articles", articles_path %></p>
