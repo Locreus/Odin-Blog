@@ -6,7 +6,11 @@
   <ul>
     <% @tag.each do |t| %>
       <li>
-        <ul><%= t.name %> <%= link_to "Delete #{t.name}", tag_path(t.id), method: :delete, data: {confirm: "Are you sure?"} %></ul>
+        <ul><%= t.name %>
+          <% if logged_in? %>
+            <%= link_to "Delete #{t.name}", tag_path(t.id), method: :delete, data: {confirm: "Are you sure?"} %>
+          <% end %>
+        </ul>
       </li>
     <% end %>
   <% end %>
